@@ -1,0 +1,93 @@
+.menu-curso{
+
+    width: 8%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    box-shadow: 8px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    transition: 0.2s;
+    align-items: center;
+
+    z-index: 100;
+    /* font-size: 0.5em; */
+    
+}
+.menu-curso:hover{
+    width: 18%;
+    /* font-size: 1em; */
+    transition: 0.2s;
+
+}
+
+
+.logo{
+    padding: 10px;
+    width: 80%;
+}
+
+.logo img{
+    width: 80%;
+}
+.menu-curso ul{
+    width: 50%;
+    height: 30%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 0px;
+    /* background-color: gray; */
+
+
+}
+
+.menu-curso li i{
+    margin: 5px;
+    
+}
+
+.menu-curso li{
+
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.menu-curso a{
+text-align: center;
+}
+
+
+.menu-curso hr{
+    width: 80%;
+    height: 1px;
+}
+
+.banner-inicio{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.textMenu{
+
+    
+    display: none;
+    transition: 0.5s;
+}
+
+.show{
+    transition: 0.5s;
+    display: block;
+}

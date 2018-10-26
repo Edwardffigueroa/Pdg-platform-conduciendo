@@ -1,0 +1,26 @@
+
+<div class="mainClases">
+<div class="mainMenuClase">
+  
+  <h3># Clase</h3>
+<div class="buttonClass"
+ *ngFor="let clase of clases" 
+ (click)="onSelect(clase)" 
+ [class.selected]="clase === claseSeleccionada" >
+
+  <!-- <img src="/src/assets/banner.png" alt=""> -->
+  <h3>{{clase.name}}</h3>
+  <p>Duración: {{clase.duracion}}</p>
+
+</div> 
+
+</div>
+<!-- 
+<div class="claseDetails">
+
+</div> -->
+<app-clase-details *ngIf="claseSeleccionada && claseSeleccionada.name ==='El vehículo y la vía' " [clase]=claseSeleccionada ></app-clase-details>
+<app-normas-transito *ngIf="claseSeleccionada && claseSeleccionada.name ==='Autoridades y normas de trásito' " ></app-normas-transito>
+<app-senalizacion-demarcacion *ngIf="claseSeleccionada && claseSeleccionada.name ==='Señalización y demarcación vial' "></app-senalizacion-demarcacion>
+
+</div>

@@ -1,0 +1,62 @@
+.inicio{
+
+    font-family: 'Cairo', sans-serif;
+
+
+    width: 100%;
+    height: 100vh;
+    background: rgba(140,157,255,1);
+    background: -moz-linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(140,157,255,1)), color-stop(41%, rgba(102,125,255,1)), color-stop(100%, rgba(48,79,254,1)));
+    background: -webkit-linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%);
+    background: linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c9dff', endColorstr='#304ffe', GradientType=1 );
+}
+
+.text-promo{
+ /* margin-top: 100px; */
+ width: 50%;
+ height: 70%;
+ display: flex;
+ flex-flow: column nowrap;
+ justify-content: start;
+ align-items: flex-start;
+ margin-left: 100px;
+ color: lightgray;
+ 
+}
+
+.text-promo h1{
+line-height: 100%;
+font-weight: 800;
+}
+.text-promo hr{
+    width: 10%;
+    
+}
+
+.banner-inicio{
+    margin-top: 10%;
+    width: 100%;
+    
+    /* height: 100%; */
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.banner-inicio img{
+width: 50%;
+height: 100%;
+}
+
+.text-promo .button{
+width: 30%;
+text-align: center;
+}
+
+

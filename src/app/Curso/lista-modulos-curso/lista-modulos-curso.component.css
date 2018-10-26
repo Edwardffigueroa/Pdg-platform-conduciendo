@@ -1,0 +1,147 @@
+
+.titleListaModulos{
+    width: 30%;
+    margin-left: 8%;   
+    padding: 10px;
+
+    border-bottom: solid;
+    border-bottom-color: gray;
+    border-bottom-width: 1px;
+    margin-bottom: 5px;
+    
+}
+
+.titleListaModulos h3{
+    font-weight: 500;
+}
+
+.lista-modulos{
+    
+    width: 30%;
+    margin-left: 8%;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: gray; */
+    
+    
+}
+.lista-modulos a{
+
+    cursor: pointer;
+    padding: 10px;
+    background-color: gainsboro;
+    
+    color: white;
+    width: 25%;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    margin: 3px;
+
+    color: gray;
+    transition: 0.4s;
+    
+}
+
+.lista-modulos a:hover{
+    background-color:lightgrey;
+    transition: 0.4s;
+}
+
+.lista-modulos a img{
+    width: 50%;
+    -webkit-filter: blur(5px); /* Safari */
+    filter: invert(30%);
+    
+}
+
+
+
+.modulo-detalles{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* align-items: center; */
+    justify-content: flex-end;
+
+    position: relative;
+    margin-left: 38%;
+    /* margin-top: -70vh; */
+     margin-top: -650px; 
+    padding: 10px;
+    
+    width: 60%;
+    border-radius: 5px;
+    background-color:white;
+    
+}
+
+
+.img-modulo-detalles{
+width: 100%;    
+height: 500px;
+
+background-image: url("/src/assets/curso/bg_curso_detail.png");
+background-origin: content-box;
+background-repeat: no-repeat;
+background-position: center;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+transition: 1.9s;
+
+}
+.img-modulo-detalles:hover{
+
+    background-position: top;
+    transition: 1.9s;
+}
+
+.img-modulo-detalles h2{
+color: white;
+}
+
+.img-modulo-detalles a{
+    color: white;
+    text-decoration: none;
+    
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.selected{
+
+    color: white !important;
+    
+background: rgba(140,157,255,1) !important ;
+background: -moz-linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%) !important ;
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(140,157,255,1)), color-stop(41%, rgba(102,125,255,1)), color-stop(100%, rgba(48,79,254,1)))!important ;
+background: -webkit-linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%)!important ;
+background: -o-linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%)!important ;
+background: -ms-linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%)!important ;
+background: linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%)!important ;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c9dff', endColorstr='#304ffe', GradientType=1 )!important ;
+}
+
+.selected img{
+
+    -webkit-filter: blur(5px); /* Safari */
+    filter: invert(0%) !important;
+}
+
+
+
+
+
+
+

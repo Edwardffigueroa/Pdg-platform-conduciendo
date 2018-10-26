@@ -1,0 +1,274 @@
+:host{
+
+    /* position: absolute; */
+    width: 68%;
+    /* height: 600px; */
+    
+    
+}
+
+.infoClass{
+
+    width: 100%;
+    background-color: white;
+}
+
+.btn-start{
+
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    width: 40%;
+    background-color: orangered;
+    color: white;
+    border-radius: 5px;
+    
+
+}
+
+.infoClass #canvasP5{
+
+    width: 100%;
+    height: 60vh; 
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+}
+
+/* actividades */
+
+.hidden{
+    display: none;
+}
+#actividadVia{
+
+    width: 100%;
+    height: 100%;
+  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+
+#actividadVia img{
+    
+    width: 80%;
+    /* height: 100%; */
+
+}
+
+.opcionesVia{
+
+    width: 20%;
+    height: 100%;
+    background-color: #4C6DAE;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+
+}
+
+.mainActividadVia{
+    display: none;
+    width: 100%;
+    height: 100%;
+
+}
+
+.btn-next{
+    width: 100%;
+    background-color: orangered;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+select{
+
+    height: 50px;
+    border: solid;
+    font-size: 1em;
+    border-width: 5px;
+}
+
+.goodQuestion{
+
+    height: 50px;
+    border: solid;
+    border-color: yellow;
+    border-width: 5px;
+}
+
+.badQuestion{
+
+    height: 50px;
+    border: solid;
+    border-color: red;
+    border-width: 5px;
+
+}
+
+.feed-main-via{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.feed{
+
+    width: 100%;
+    height: 100%;
+    background-color: blueviolet;
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feed h2{
+    color: white;
+}
+
+.btn-next-via{
+    margin: 10px;
+    text-align: center;
+    width: 40%;
+    background-color: orangered;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+/* actividad del vehículo */
+
+.mainActividadVehiculo_uno{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.mainActividadVehiculo_dos{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.mainActividadVehiculo_tres{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.actividadVehiculo{
+
+    background-image: url('/src/assets/actividades/bg_actividadvehiculo/actividad_partes-vehículo.jpg');
+    /* background-origin: content-box; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.actividadVehiculo .titleActividad{
+    width: 100%;
+    padding: 8px;
+
+}
+.actividadVehiculo .titleActividad h2{
+text-align: center;
+}
+
+.actividadVehiculo .contentActividad{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.actividadVehiculo .contentActividad .actividadVehiculo_img{
+width: 30%;
+}
+
+.actividadVehiculo .contentActividad .actividadVehiculo_img img{
+    width: 100%;
+}
+
+.actividadVehiculo .contentActividad .actividadVehiculo_options{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnOpt{
+
+    width: 40%;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 10px;
+    background-color: #4C6DAE;
+
+
+    text-align: center;
+    border-radius: 8px;
+
+}
+
+.btnOpt:hover{
+    background-color: #4C5DAE;
+    box-shadow: 5px 10px #4C3DAE;
+}
+
+.selected{
+    background-color: #4C5DAE;
+}
+
+.feed-main-vehiculo{
+    display: none;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.feed-final-viayvehiculo{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-next-via-feed{
+
+    margin: 10px;
+    text-align: center;
+    width: 40%;
+    background-color: orangered;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+
+
+
+
+
+
+

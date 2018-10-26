@@ -1,0 +1,16 @@
+<div class="menu-curso" (mouseover)="mouseIn()" (mouseout)="mouseOut()" >
+
+  <p class="logo"><img src="/src/assets/banner.png" alt=""></p>
+  <hr>
+  <ul>
+    <li>MENU</li>
+      <li><i class="fas fa-home"></i> <p class="textMenu" [class.show]="overed" >Inicio</p> </li>
+      <li><i class="fas fa-pen"></i> <p class="textMenu" [class.show]="overed">Clases</p></li>
+      <li><i class="fas fa-wrench"></i> <p class="textMenu" [class.show]="overed">Configuración</p></li>
+  </ul>
+
+  <hr>
+
+  <a routerLink ="Inicio" class="textMenu" [class.show]="overed">CERRAR SESIÓN</a>
+
+</div>

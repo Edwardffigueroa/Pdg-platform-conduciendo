@@ -1,0 +1,28 @@
+<div class="titleListaModulos">
+<h3>Selecciona el módulo a desarrollar</h3>
+</div>
+<div class="lista-modulos">
+
+    <a *ngFor="let modulo of modulos" (click)="onSelect(modulo)" 
+    [class.selected]="modulo === moduloSeleccionado" >
+      <img src={{modulo.image}} alt="">
+      <p>{{modulo.nombre}}</p>
+    </a>    
+
+  </div>
+
+  <div class="modulo-detalles" *ngIf="moduloSeleccionado" >
+
+    <div class="img-modulo-detalles">
+      <h2>Empezar {{moduloSeleccionado.nombre}}</h2>
+      <a class="button" (click)="openSelectedClass(moduloSeleccionado)"> Ir a Clases </a>
+    </div>
+
+    <h3>{{moduloSeleccionado.nombre}}</h3>
+    <p>{{moduloSeleccionado.descripcion}}</p>
+    <p><b>Duración</b> {{moduloSeleccionado.duracion}} minutos aproximadamente</p>
+
+  </div>
+
+
+  
