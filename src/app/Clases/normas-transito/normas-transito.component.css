@@ -118,10 +118,48 @@ height: 100%;
 }
 
 .btn_next{
-    
+
     cursor: pointer;
     padding: 10px;
     background-color: cornflowerblue;
 
 }
+
+.segundoRetoControls{
+
+    width: 100%;
+    display: flex;
+    /* position: absolute; */
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    background-color: blueviolet;
+}
+ 
+
+.segundoRetoControlsContainer{
+
+    display: none;
+    width: 100%;
+
+    /* position: absolute; */
+}
+
+.retroAlimentacionMalaContainerSegundo{
+    display: none;
+width: 100%;
+height: 100%;
+}
+.retroAlimentacionBuenaContainerSegundo{
+    display: none;
+width: 100%;
+height: 100%;
+}
+
+.tercerRetoControlsContainer{
+    display: none;
+    width: 100%;
+}
+
+
+
 

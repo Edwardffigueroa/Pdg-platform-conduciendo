@@ -43,9 +43,17 @@ export class NormasTransitoComponent implements OnInit {
 
     var segundoRetoVideo;
     var segundoRetoControls;
+    var segundoRetoExplicacionVideo;
 
+    var tercerRetoVideo;
+    var tercerRetoControls;
+    var tercerRetoExplicaciónVideo;
+//feeds
     var retroalimenatacionBuena;
     var retroalimenatacionMala;
+
+    var retroalimenatacionBuenaSegunda;
+    var retroalimenatacionMalaSegunda;
 
 
 
@@ -58,6 +66,15 @@ export class NormasTransitoComponent implements OnInit {
       retroalimenatacionMala.hide();
       retroalimenatacionBuena =p.select('.retroAlimentacionBuenaContainer');
       retroalimenatacionBuena.hide();
+      retroalimenatacionMalaSegunda = p.select('.retroAlimentacionMalaContainerSegundo');
+      retroalimenatacionMalaSegunda.hide();
+      retroalimenatacionBuenaSegunda =p.select('.retroAlimentacionBuenaContainerSegundo');
+      retroalimenatacionBuenaSegunda.hide();
+      segundoRetoControls =p.select('.segundoRetoControlsContainer');
+      segundoRetoControls.hide();
+
+      tercerRetoControls =p.select('.tercerRetoControlsContainer');
+      tercerRetoControls.hide();
       primerReto();
 
     }
@@ -132,7 +149,7 @@ export class NormasTransitoComponent implements OnInit {
 
       primerRetoExplicacionVideo.hide();
       
-      segundoRetoVideo = p.createVideo('src/assets/actividadexplicativa/2.mov');
+      segundoRetoVideo = p.createVideo('src/assets/actividadexplicativa/3.mov');
       segundoRetoVideo.parent('canvasP5video');
       segundoRetoVideo.size(canvasW, canvasH);
       segundoRetoVideo.speed(2);//comentar despues
@@ -144,9 +161,87 @@ export class NormasTransitoComponent implements OnInit {
     }
 
     function segundoRetoSelectores(){
-      
+
+      segundoRetoControls.show();
+      var girar_izquierda = p.select('.girar_izquierda');
+      var girar_derecha = p.select('.girar_derecha');
+      var tomar_cicloruta = p.select('.tomar_cicloruta');
+
+      girar_izquierda.mousePressed(respuestaIncorrecta);
+      girar_derecha.mousePressed(respuestaCorrecta);
+      tomar_cicloruta.mousePressed(respuestaIncorrecta);
+
+      var btn_continuar_correct = p.select('.continuar_btn_correct_segundo');
+      var btn_continuar_bad = p.select('.continuar_btn_bad_segundo');
+
+      function respuestaCorrecta(){
+
+        segundoRetoControls.hide();
+        segundoRetoVideo.hide();
+
+        retroalimenatacionBuenaSegunda.show();
+        btn_continuar_correct.mousePressed(segundoRetoExplicacion);
+
+      }
+        
+  
+      function respuestaIncorrecta(){
+
+        segundoRetoControls.hide();
+        segundoRetoVideo.hide();
+  
+        retroalimenatacionMalaSegunda.show();
+        btn_continuar_bad.mousePressed(segundoRetoExplicacion);
+        
+      }
 
     }
+
+    function segundoRetoExplicacion(){
+
+       retroalimenatacionBuenaSegunda.hide();
+       retroalimenatacionMalaSegunda.hide();
+       
+       segundoRetoExplicacionVideo = p.createVideo('src/assets/actividadexplicativa/4.mov');
+       segundoRetoExplicacionVideo.parent('canvasP5video');
+       segundoRetoExplicacionVideo.size(canvasW, canvasH);
+       segundoRetoExplicacionVideo.speed(2);//comentar despues
+       
+       segundoRetoExplicacionVideo.play();
+ 
+       segundoRetoExplicacionVideo.onended(tercerReto);
+
+      }
+
+      function tercerReto(){
+
+        segundoRetoExplicacionVideo.hide();
+
+        tercerRetoVideo = p.createVideo('src/assets/actividadexplicativa/5.mov');
+        tercerRetoVideo.parent('canvasP5video');
+        tercerRetoVideo.size(canvasW, canvasH);
+        tercerRetoVideo.speed(2);//comentar despues
+        
+        tercerRetoVideo.play();
+  
+        tercerRetoVideo.onended(tercerRetoSelectroes);
+
+      }
+
+      function tercerRetoSelectroes(){
+
+        tercerRetoControls.show();
+
+        var avanzar = p.select('.avanzar');
+        var noAvanzar = p.select('.noAvanzar');
+
+
+      }
+
+      function tercerRetoExplicacion(){
+
+
+      }
 
  
 
