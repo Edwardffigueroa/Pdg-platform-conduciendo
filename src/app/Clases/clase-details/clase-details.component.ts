@@ -17,32 +17,19 @@ export class ClaseDetailsComponent implements OnInit {
 
   @Input() clase: Clases;
   @ViewChild('canvasP5') container : ElementRef;
-  claseid: number;
+  
   
   constructor() { }
 
   ngOnInit() {
-    this.claseid =0;
+    
   }
 
   empezar(){
 
-    switch(this.clase.name){
-      case 'El vehículo y la vía':
-      this.claseid =1;
+    
       this.createCanvas();
-      break;
 
-      case 'Autoridades y normas de trásito':
-      // this.createAutoridades();
-      this.createCanvas();
-      this.claseid =2;
-      break;
-
-      case 'El vehículo y la vía':
-      break;
-
-    }
 
     /*if(this.clase.name =='El vehículo y la vía'){
 
@@ -57,10 +44,7 @@ export class ClaseDetailsComponent implements OnInit {
 
   }
 
-  private createAutoridades(){
-    this.p5 = new p5(this.autoridades);
-    
-  }
+  
 
   private createCanvas() {
     this.p5 = new p5(this.sketch);
@@ -427,7 +411,7 @@ export class ClaseDetailsComponent implements OnInit {
       var delayInMilliseconds = 3000; //1 second
 
       setTimeout(function() {
-        //your code to be executed after 1 second
+        
         feedFinal.hide();
         console.log("desaparecer");
 
@@ -442,15 +426,7 @@ export class ClaseDetailsComponent implements OnInit {
 
   }//final of sketch
 
-  private autoridades(p: any) {
-
-    p.setup = () => {
-
-      console.log("ya por fin en autoridades");
-
-    }
-
-  }
+  
 
 
   
