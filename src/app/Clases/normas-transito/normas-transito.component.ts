@@ -55,6 +55,11 @@ export class NormasTransitoComponent implements OnInit {
     var retroalimenatacionBuenaSegunda;
     var retroalimenatacionMalaSegunda;
 
+    var retroalimenatacionBuenaTercera;
+    var retroalimenatacionMalaTercera;
+
+    var feedFinal;
+
 
 
     p.setup = () =>{
@@ -70,6 +75,13 @@ export class NormasTransitoComponent implements OnInit {
       retroalimenatacionMalaSegunda.hide();
       retroalimenatacionBuenaSegunda =p.select('.retroAlimentacionBuenaContainerSegundo');
       retroalimenatacionBuenaSegunda.hide();
+      retroalimenatacionBuenaTercera =p.select('.retroAlimentacionBuenaContainerTercero');
+      retroalimenatacionBuenaTercera.hide();
+      retroalimenatacionMalaTercera =p.select('.retroAlimentacionMalaContainerTercero');
+      retroalimenatacionMalaTercera.hide();
+      feedFinal = p.select('.feed-final-normas');
+      feedFinal.hide();
+
       segundoRetoControls =p.select('.segundoRetoControlsContainer');
       segundoRetoControls.hide();
 
@@ -235,30 +247,69 @@ export class NormasTransitoComponent implements OnInit {
         var avanzar = p.select('.avanzar');
         var noAvanzar = p.select('.noAvanzar');
 
+        avanzar.mousePressed(respuestaIncorrecta);
+        noAvanzar.mousePressed(respuestaCorrecta);
+
+        var btn_continuar_correct = p.select('.continuar_btn_correct_tercero');
+       var btn_continuar_bad = p.select('.continuar_btn_bad_tercero');
+
+      function respuestaCorrecta(){
+
+        tercerRetoControls.hide();
+        tercerRetoVideo.hide();
+
+        retroalimenatacionBuenaTercera.show();
+        btn_continuar_correct.mousePressed(tercerRetoExplicacion);
+
+      }
+        
+  
+      function respuestaIncorrecta(){
+
+        tercerRetoControls.hide();
+        tercerRetoVideo.hide();
+  
+        retroalimenatacionMalaTercera.show();
+        btn_continuar_bad.mousePressed(tercerRetoExplicacion);
+        
+      }
+
 
       }
 
       function tercerRetoExplicacion(){
+
+        retroalimenatacionMalaTercera.hide();      
+        retroalimenatacionBuenaTercera.hide();
+
+        tercerRetoExplicaciónVideo = p.createVideo('src/assets/actividadexplicativa/6.mov');
+        tercerRetoExplicaciónVideo.parent('canvasP5video');
+        tercerRetoExplicaciónVideo.size(canvasW, canvasH);
+        tercerRetoExplicaciónVideo.speed(2);//comentar despues
+        tercerRetoExplicaciónVideo.play();
+        tercerRetoExplicaciónVideo.onended(finalClase);
+
+      }
+
+      function finalClase(){
+        tercerRetoExplicaciónVideo.hide();
+        feedFinal.show();
+
+        var delayInMilliseconds = 3000; //1 second
+
+        setTimeout(function() {
+          
+          feedFinal.hide();
+          
+  
+        }, delayInMilliseconds);
 
 
       }
 
  
 
-    function timerOcultar(toHide){
-      var delayInMilliseconds = 3000; //1 second
-
-      setTimeout(function() {
-
-        toHide.hide();
-        
-
-      }, delayInMilliseconds);
-
-      
-
-      
-    }
+    
 
     
 

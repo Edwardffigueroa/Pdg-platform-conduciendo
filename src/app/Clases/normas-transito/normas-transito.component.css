@@ -161,5 +161,20 @@ height: 100%;
 }
 
 
+.retroAlimentacionMalaContainerTercero{
+    display: none;
+width: 100%;
+height: 100%;
+}
 
+.retroAlimentacionBuenaContainerTercero{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
 
+.feed-final-normas{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
