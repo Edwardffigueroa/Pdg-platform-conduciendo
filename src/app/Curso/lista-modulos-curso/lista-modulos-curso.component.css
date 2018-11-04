@@ -131,6 +131,7 @@ background: -o-linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1
 background: -ms-linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%)!important ;
 background: linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%)!important ;
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c9dff', endColorstr='#304ffe', GradientType=1 )!important ;
+
 }
 
 .selected img{

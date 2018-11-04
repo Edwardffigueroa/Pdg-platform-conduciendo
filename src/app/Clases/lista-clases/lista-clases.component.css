@@ -5,9 +5,9 @@
 }
 .mainClases{
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     
@@ -16,14 +16,14 @@
 
 .mainMenuClase{
 
-    width: 33%;
-    height: 100vh;
+    width: 100%;
+    /* height: 100vh; */
     
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
-    justify-content: center;
+    justify-content: space-around;
 
     /* background-color: blueviolet; */
 
@@ -31,14 +31,31 @@
 
 .mainMenuClase .buttonClass{
 
-    background-color: blue;
-    color: white;
-    padding: 5px;
+    width: 30%;
+    
+    color: black;
+    padding: 8px;
     margin: 5px;
+
+    background-color: gainsboro;
+    
+    border-radius: 5px;
     
 }
 
 .selected{
-    background-color: gray !important;
+
+    color: white !important;
+    
+    background: rgba(140,157,255,1) !important ;
+    background: -moz-linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%) !important ;
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(140,157,255,1)), color-stop(41%, rgba(102,125,255,1)), color-stop(100%, rgba(48,79,254,1)))!important ;
+    background: -webkit-linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%)!important ;
+    background: -o-linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%)!important ;
+    background: -ms-linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%)!important ;
+    background: linear-gradient(45deg, rgba(140,157,255,1) 0%, rgba(102,125,255,1) 41%, rgba(48,79,254,1) 100%)!important ;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c9dff', endColorstr='#304ffe', GradientType=1 )!important ;
+    
+
 }
 

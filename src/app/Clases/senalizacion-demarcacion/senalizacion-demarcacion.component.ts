@@ -37,10 +37,14 @@ export class SenalizacionDemarcacionComponent implements OnInit {
           var canvasDiv = document.getElementById('canvasP5');
           var canvasW = canvasDiv.clientWidth;
           var canvasH = canvasDiv.clientHeight;
+          var btnStart;
 
     var explicacionSenales;
 
     p.setup = () =>{
+
+      btnStart = p.select('.btn-start');
+      btnStart.hide();
 
       explicacionSenalesVideo();
 
@@ -50,7 +54,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       explicacionSenales = p.createVideo('src/assets/senales/senalesdetransito.mov');
       explicacionSenales.parent('canvasP5video');
       explicacionSenales.size(canvasW, canvasH);
-      explicacionSenales.speed(2);//comentar despues
+      // explicacionSenales.speed(2);//comentar despues
       
       explicacionSenales.play();
 

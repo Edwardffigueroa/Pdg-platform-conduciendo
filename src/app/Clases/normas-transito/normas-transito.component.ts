@@ -36,6 +36,7 @@ export class NormasTransitoComponent implements OnInit {
     var canvasDiv = document.getElementById('canvasP5');
     var canvasW = canvasDiv.clientWidth;
     var canvasH = canvasDiv.clientHeight;
+    var btnStart;
 
     var primerRetoVideo;
     var primerRetoControls;
@@ -63,6 +64,9 @@ export class NormasTransitoComponent implements OnInit {
 
 
     p.setup = () =>{
+
+      btnStart = p.select('.btn-start');
+      btnStart.hide();
 
       primerRetoControls = p.select('.primerRetoControlsContainer');
       primerRetoControls.hide();
@@ -96,7 +100,7 @@ export class NormasTransitoComponent implements OnInit {
       primerRetoVideo = p.createVideo('src/assets/actividadexplicativa/1.mov');
       primerRetoVideo.parent('canvasP5video');
       primerRetoVideo.size(canvasW, canvasH);
-      primerRetoVideo.speed(2);//comentar despues
+      // primerRetoVideo.speed(2);//comentar despues
       
       primerRetoVideo.play();
 
@@ -149,7 +153,7 @@ export class NormasTransitoComponent implements OnInit {
       primerRetoExplicacionVideo = p.createVideo('src/assets/actividadexplicativa/2.mov');
       primerRetoExplicacionVideo.parent('canvasP5video');
       primerRetoExplicacionVideo.size(canvasW, canvasH);
-      primerRetoExplicacionVideo.speed(2);//comentar despues
+      // primerRetoExplicacionVideo.speed(2);//comentar despues
       
       primerRetoExplicacionVideo.play();
 
@@ -164,7 +168,7 @@ export class NormasTransitoComponent implements OnInit {
       segundoRetoVideo = p.createVideo('src/assets/actividadexplicativa/3.mov');
       segundoRetoVideo.parent('canvasP5video');
       segundoRetoVideo.size(canvasW, canvasH);
-      segundoRetoVideo.speed(2);//comentar despues
+      // segundoRetoVideo.speed(2);//comentar despues
       
       segundoRetoVideo.play();
 
@@ -217,7 +221,7 @@ export class NormasTransitoComponent implements OnInit {
        segundoRetoExplicacionVideo = p.createVideo('src/assets/actividadexplicativa/4.mov');
        segundoRetoExplicacionVideo.parent('canvasP5video');
        segundoRetoExplicacionVideo.size(canvasW, canvasH);
-       segundoRetoExplicacionVideo.speed(2);//comentar despues
+      //  segundoRetoExplicacionVideo.speed(2);//comentar despues
        
        segundoRetoExplicacionVideo.play();
  
@@ -232,7 +236,7 @@ export class NormasTransitoComponent implements OnInit {
         tercerRetoVideo = p.createVideo('src/assets/actividadexplicativa/5.mov');
         tercerRetoVideo.parent('canvasP5video');
         tercerRetoVideo.size(canvasW, canvasH);
-        tercerRetoVideo.speed(2);//comentar despues
+        // tercerRetoVideo.speed(2);//comentar despues
         
         tercerRetoVideo.play();
   
@@ -285,7 +289,7 @@ export class NormasTransitoComponent implements OnInit {
         tercerRetoExplicaciónVideo = p.createVideo('src/assets/actividadexplicativa/6.mov');
         tercerRetoExplicaciónVideo.parent('canvasP5video');
         tercerRetoExplicaciónVideo.size(canvasW, canvasH);
-        tercerRetoExplicaciónVideo.speed(2);//comentar despues
+        // tercerRetoExplicaciónVideo.speed(2);//comentar despues
         tercerRetoExplicaciónVideo.play();
         tercerRetoExplicaciónVideo.onended(finalClase);
 

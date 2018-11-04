@@ -63,8 +63,10 @@ export class ClaseDetailsComponent implements OnInit {
     var canvasDiv = document.getElementById('canvasP5');
     var canvasW = canvasDiv.clientWidth;
     var canvasH = canvasDiv.clientHeight;
+    var btnStart;
 
     var laVia;//explicación de la vía
+    var mandos; //explicación mandos
     var laViaActividad;
     var feedbackContain;
     var elVehiculo; 
@@ -80,6 +82,9 @@ export class ClaseDetailsComponent implements OnInit {
     var respuestasIncorrectas=0;
 
     p.setup = () => {
+
+      btnStart = p.select('.btn-start');
+      btnStart.hide();
       
       laViaActividad = p.select('.mainActividadVia');
       laViaActividad.hide();
@@ -117,17 +122,33 @@ export class ClaseDetailsComponent implements OnInit {
     function explicacionVia(){
       
 
-      laVia = p.createVideo('src/assets/payUnew.mov');
+      laVia = p.createVideo('src/assets/primeraclase/partesvia.mov');
       laVia.parent('canvasP5');
       laVia.size(canvasW, canvasH);
+      // laVia.speed(2);//comentar despues
       laVia.play();
       
-      laVia.onended(actividadVia);
+      
+      laVia.onended(explicacionMandos);
+    }
+
+    function explicacionMandos(){
+      laVia.hide();
+
+      mandos = p.createVideo('src/assets/primeraclase/tiposvias.mov');
+      mandos.parent('canvasP5');
+      mandos.size(canvasW, canvasH);
+      // mandos.speed(2);//comentar despues
+      mandos.play();
+      
+      
+      mandos.onended(actividadVia);
+
     }
 
     function actividadVia(){
-
-      laVia.hide();
+      mandos.hide();
+      
       laViaActividad.show();
 
       var button = p.select('.btn-next');
@@ -215,6 +236,7 @@ export class ClaseDetailsComponent implements OnInit {
       elVehiculo = p.createVideo('src/assets/mandos.mov');
       elVehiculo.parent('canvasP5');
       elVehiculo.size(canvasW, canvasH);
+      // elVehiculo.speed(2);//comentar despues
       elVehiculo.play();
       
       elVehiculo.onended(actividadVehiculo);

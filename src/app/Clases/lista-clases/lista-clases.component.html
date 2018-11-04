@@ -2,14 +2,14 @@
 <div class="mainClases">
 <div class="mainMenuClase">
   
-  <h3># Clase</h3>
+  
 <div class="buttonClass"
  *ngFor="let clase of clases" 
  (click)="onSelect(clase)" 
  [class.selected]="clase === claseSeleccionada" >
 
   <!-- <img src="/src/assets/banner.png" alt=""> -->
-  <h3>{{clase.name}}</h3>
+  <h3>{{clases.indexOf(clase)+1}} . {{clase.name}}</h3>
   <p>Duración: {{clase.duracion}}</p>
 
 </div> 

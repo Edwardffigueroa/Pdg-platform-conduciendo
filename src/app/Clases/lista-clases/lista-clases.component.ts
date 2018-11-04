@@ -23,8 +23,12 @@ export class ListaClasesComponent implements OnInit {
   ngOnInit() {
 
     if(this.modulo!=undefined){
+      
     this.clases = this.modulo.clases;
+
     } 
+
+    this.claseSeleccionada = this.clases[0];
     
     //console.log("ya en clase "+this.modulo.nombre);
     
