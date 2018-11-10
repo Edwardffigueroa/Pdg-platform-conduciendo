@@ -122,7 +122,8 @@ export class ClaseDetailsComponent implements OnInit {
     function explicacionVia(){
       
 
-      laVia = p.createVideo('src/assets/primeraclase/partesvia.mov');
+      laVia = p.createVideo('src/assets/primeraclase/tiposvias.mov');
+      
       laVia.parent('canvasP5');
       laVia.size(canvasW, canvasH);
       // laVia.speed(2);//comentar despues
@@ -135,7 +136,7 @@ export class ClaseDetailsComponent implements OnInit {
     function explicacionMandos(){
       laVia.hide();
 
-      mandos = p.createVideo('src/assets/primeraclase/tiposvias.mov');
+      mandos = p.createVideo('src/assets/primeraclase/partesvia.mov');
       mandos.parent('canvasP5');
       mandos.size(canvasW, canvasH);
       // mandos.speed(2);//comentar despues
@@ -155,7 +156,6 @@ export class ClaseDetailsComponent implements OnInit {
       
       
       button.mousePressed(evaluarActividadVia);
-      
 
     }
 

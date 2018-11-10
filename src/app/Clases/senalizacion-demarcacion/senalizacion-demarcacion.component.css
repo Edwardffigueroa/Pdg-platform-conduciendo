@@ -47,3 +47,61 @@
 #canvasP5video{
     width: 100%;
 }
+
+.containerControlUno{
+
+    display: none;
+    width: 100%;
+
+}
+.containerControlDos{
+
+    display: none;
+    width: 100%;
+}
+
+.containerControlTres{
+
+    display: none;
+    width: 100%;
+}
+
+.containerControlCuatro{
+
+    display: none;
+    width: 100%;
+}
+
+.containerControlCinco{
+
+    display: none;
+    width: 100%;
+}
+
+.containerControlSeis{
+
+    display: none;
+    width: 100%;
+}
+
+
+.controls{
+
+    width: 100%;
+    display: flex;
+    /* position: absolute; */
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    background-color: blueviolet;
+
+}
+
+
+.controls .btn{ 
+
+
+    cursor: pointer;
+    padding: 10px;
+    background-color: cornflowerblue;
+
+}
