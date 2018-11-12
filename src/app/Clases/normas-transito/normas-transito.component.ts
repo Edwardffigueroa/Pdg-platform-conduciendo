@@ -48,7 +48,7 @@ export class NormasTransitoComponent implements OnInit {
 
     var tercerRetoVideo;
     var tercerRetoControls;
-    var tercerRetoExplicaciónVideo;
+    var tercerRetoExplicacionVideo;
 //feeds
     var retroalimenatacionBuena;
     var retroalimenatacionMala;
@@ -286,17 +286,17 @@ export class NormasTransitoComponent implements OnInit {
         retroalimenatacionMalaTercera.hide();      
         retroalimenatacionBuenaTercera.hide();
 
-        tercerRetoExplicaciónVideo = p.createVideo('src/assets/actividadexplicativa/6.mov');
-        tercerRetoExplicaciónVideo.parent('canvasP5video');
-        tercerRetoExplicaciónVideo.size(canvasW, canvasH);
-        // tercerRetoExplicaciónVideo.speed(2);//comentar despues
-        tercerRetoExplicaciónVideo.play();
-        tercerRetoExplicaciónVideo.onended(finalClase);
+        tercerRetoExplicacionVideo = p.createVideo('src/assets/actividadexplicativa/6.mov');
+        tercerRetoExplicacionVideo.parent('canvasP5video');
+        tercerRetoExplicacionVideo.size(canvasW, canvasH);
+        // tercerRetoExplicacionVideo.speed(2);//comentar despues
+        tercerRetoExplicacionVideo.play();
+        tercerRetoExplicacionVideo.onended(finalClase);
 
       }
 
       function finalClase(){
-        tercerRetoExplicaciónVideo.hide();
+        tercerRetoExplicacionVideo.hide();
         feedFinal.show();
 
         var delayInMilliseconds = 3000; //1 second
