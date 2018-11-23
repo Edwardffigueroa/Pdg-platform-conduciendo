@@ -4,14 +4,14 @@ import { Modulo } from "./modulos";
 export const MODULOS: Modulo[]=[
 
     {id:1, nombre: 'Adaptación al medio',
-     descripcion: "Lorem ipsu alkjdndwk ajsnd ajs apndsid d sakdsnd jsad jsd skd alskakaks dajds aksjd aslaks calskcas salkdan",
+     descripcion: "En este curso aprenderás todos los elementos que intervienen en la vía",
      duracion:63,
      clases:[
-         {name: 'El vehículo y la vía', resumen: "Lorem ipsu alkjdndwk ajsnd ajs apndsid d sakdsnd jsad jsd skd alskakaks dajds aksjd aslaks calskcas salkdan", duracion:2 },
-         {name: 'Autoridades y normas de trásito', resumen: "Lorem ipsu alkjdndwk ajsnd ajs apndsid d sakdsnd jsad jsd skd alskakaks dajds aksjd aslaks calskcas salkdan", duracion:2 },
-         {name: 'Señalización y demarcación vial', resumen: "Lorem ipsu alkjdndwk ajsnd ajs apndsid d sakdsnd jsad jsd skd alskakaks dajds aksjd aslaks calskcas salkdan", duracion:2 }
+         {name: 'El vehículo y la vía', resumen: "Lorem ipsu alkjdndwk ajsnd ajs apndsid d sakdsnd jsad jsd skd alskakaks dajds aksjd aslaks calskcas salkdan", duracion:5 },
+         {name: 'Autoridades y normas de trásito', resumen: "Lorem ipsu alkjdndwk ajsnd ajs apndsid d sakdsnd jsad jsd skd alskakaks dajds aksjd aslaks calskcas salkdan", duracion:5 },
+         {name: 'Señalización y demarcación vial', resumen: "Lorem ipsu alkjdndwk ajsnd ajs apndsid d sakdsnd jsad jsd skd alskakaks dajds aksjd aslaks calskcas salkdan", duracion:5 }
      ],
-     image:"/src/assets/curso/icons/adaptacion_white.png" 
+     image:"/assets/curso/icons/adaptacion_white.png" 
     },
 
     {id:2,
@@ -22,7 +22,7 @@ export const MODULOS: Modulo[]=[
         {name: 'El vehículo y la vía', resumen: "Lorem ipsu alkjdndwk ajsnd ajs apndsid d sakdsnd jsad jsd skd alskakaks dajds aksjd aslaks calskcas salkdan", duracion:2 }
        
     ],
-    image:"/src/assets/curso/icons/etica_white.png"  
+    image:"/assets/curso/icons/etica_white.png"  
     },
 
     {id:3,
@@ -33,7 +33,7 @@ export const MODULOS: Modulo[]=[
        
         {name: 'Señalización y demarcación vial', resumen: "Lorem ipsu alkjdndwk ajsnd ajs apndsid d sakdsnd jsad jsd skd alskakaks dajds aksjd aslaks calskcas salkdan", duracion:2 }
     ] ,
-    image:"/src/assets/curso/icons/mecanica_white.png" 
+    image:"/assets/curso/icons/mecanica_white.png" 
     },
 
     {id:4,
@@ -44,7 +44,7 @@ export const MODULOS: Modulo[]=[
         
         {name: 'Señalización y demarcación vial', resumen: "Lorem ipsu alkjdndwk ajsnd ajs apndsid d sakdsnd jsad jsd skd alskakaks dajds aksjd aslaks calskcas salkdan", duracion:2 }
     ] ,
-    image:"/src/assets/curso/icons/marcolegal_white.png" 
+    image:"/assets/curso/icons/marcolegal_white.png" 
     },
 
     {id:5,
@@ -55,7 +55,7 @@ export const MODULOS: Modulo[]=[
        
         {name: 'Señalización y demarcación vial', resumen: "Lorem ipsu alkjdndwk ajsnd ajs apndsid d sakdsnd jsad jsd skd alskakaks dajds aksjd aslaks calskcas salkdan", duracion:2 }
     ],
-    image:"/src/assets/curso/icons/tecnicas_white.png"
+    image:"/assets/curso/icons/tecnicas_white.png"
     }
 
 ]

@@ -61,7 +61,9 @@ export class NormasTransitoComponent implements OnInit {
 
     var feedFinal;
 
+    var wait;
 
+    
 
     p.setup = () =>{
 
@@ -91,16 +93,53 @@ export class NormasTransitoComponent implements OnInit {
 
       tercerRetoControls =p.select('.tercerRetoControlsContainer');
       tercerRetoControls.hide();
+      wait =p.select('.text-wait');
+      wait.show();
+      
       primerReto();
 
     }
 
+    p.draw = () =>{
+
+    //  if( &&segundoRetoVideo.time()>2){
+    //   wait.hide();
+    //  }
+    
+    //  if(segundoRetoExplicacionVideo.time()>2){
+    //   wait.hide();
+    //  }
+
+    //  if(tercerRetoVideo.time()>2){
+    //   wait.hide();
+    //  }
+    
+    //  if(tercerRetoExplicacionVideo.time()>2){
+    //   wait.hide();
+    //  }
+
+    //  if(primerRetoExplicacionVideo.time()>2){
+    //   wait.hide();
+
+    //  }
+
+      if(primerRetoVideo.time()>2){
+        wait.hide();
+     }
+
+    }
+
+    
+
     function primerReto(){
 
-      primerRetoVideo = p.createVideo('src/assets/actividadexplicativa/1.mov');
+      primerRetoVideo = p.createVideo('/assets/actividadexplicativa/1.mov');
+      
       primerRetoVideo.parent('canvasP5video');
       primerRetoVideo.size(canvasW, canvasH);
+      
       // primerRetoVideo.speed(2);//comentar despues
+      
       
       primerRetoVideo.play();
 
@@ -109,6 +148,7 @@ export class NormasTransitoComponent implements OnInit {
     }
 
     function primerRetoSelectores(){
+      // console.log(primerRetoVideo.time());
       primerRetoControls.show();
 
       var izquierda = p.select('.izquierda');
@@ -120,7 +160,6 @@ export class NormasTransitoComponent implements OnInit {
       var btn_continuar_correct = p.select('.continuar_btn_correct');
       var btn_continuar_bad = p.select('.continuar_btn_bad');
     
-
       function respuestaCorrecta(){
         primerRetoControls.hide();
         primerRetoVideo.hide();
@@ -129,8 +168,7 @@ export class NormasTransitoComponent implements OnInit {
         btn_continuar_correct.mousePressed(primerRetoExplicacion);
 
       }
-        
-  
+
       function respuestaIncorrecta(){
 
         primerRetoControls.hide();
@@ -140,9 +178,6 @@ export class NormasTransitoComponent implements OnInit {
         btn_continuar_bad.mousePressed(primerRetoExplicacion);
         
       }
-
-   
-
     }
 
     function primerRetoExplicacion(){
@@ -150,7 +185,7 @@ export class NormasTransitoComponent implements OnInit {
       retroalimenatacionBuena.hide();
       retroalimenatacionMala.hide();
       
-      primerRetoExplicacionVideo = p.createVideo('src/assets/actividadexplicativa/2.mov');
+      primerRetoExplicacionVideo = p.createVideo('/assets/actividadexplicativa/2.mov');
       primerRetoExplicacionVideo.parent('canvasP5video');
       primerRetoExplicacionVideo.size(canvasW, canvasH);
       // primerRetoExplicacionVideo.speed(2);//comentar despues
@@ -165,7 +200,7 @@ export class NormasTransitoComponent implements OnInit {
 
       primerRetoExplicacionVideo.hide();
       
-      segundoRetoVideo = p.createVideo('src/assets/actividadexplicativa/3.mov');
+      segundoRetoVideo = p.createVideo('/assets/actividadexplicativa/3.mov');
       segundoRetoVideo.parent('canvasP5video');
       segundoRetoVideo.size(canvasW, canvasH);
       // segundoRetoVideo.speed(2);//comentar despues
@@ -218,7 +253,7 @@ export class NormasTransitoComponent implements OnInit {
        retroalimenatacionBuenaSegunda.hide();
        retroalimenatacionMalaSegunda.hide();
        
-       segundoRetoExplicacionVideo = p.createVideo('src/assets/actividadexplicativa/4.mov');
+       segundoRetoExplicacionVideo = p.createVideo('/assets/actividadexplicativa/4.mov');
        segundoRetoExplicacionVideo.parent('canvasP5video');
        segundoRetoExplicacionVideo.size(canvasW, canvasH);
       //  segundoRetoExplicacionVideo.speed(2);//comentar despues
@@ -233,7 +268,7 @@ export class NormasTransitoComponent implements OnInit {
 
         segundoRetoExplicacionVideo.hide();
 
-        tercerRetoVideo = p.createVideo('src/assets/actividadexplicativa/5.mov');
+        tercerRetoVideo = p.createVideo('/assets/actividadexplicativa/5.mov');
         tercerRetoVideo.parent('canvasP5video');
         tercerRetoVideo.size(canvasW, canvasH);
         // tercerRetoVideo.speed(2);//comentar despues
@@ -286,7 +321,7 @@ export class NormasTransitoComponent implements OnInit {
         retroalimenatacionMalaTercera.hide();      
         retroalimenatacionBuenaTercera.hide();
 
-        tercerRetoExplicacionVideo = p.createVideo('src/assets/actividadexplicativa/6.mov');
+        tercerRetoExplicacionVideo = p.createVideo('/assets/actividadexplicativa/6.mov');
         tercerRetoExplicacionVideo.parent('canvasP5video');
         tercerRetoExplicacionVideo.size(canvasW, canvasH);
         // tercerRetoExplicacionVideo.speed(2);//comentar despues

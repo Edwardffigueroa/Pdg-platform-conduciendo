@@ -122,7 +122,7 @@ export class ClaseDetailsComponent implements OnInit {
     function explicacionVia(){
       
 
-      laVia = p.createVideo('src/assets/primeraclase/tiposvias.mov');
+      laVia = p.createVideo('/assets/primeraclase/tiposvias.mov');
       
       laVia.parent('canvasP5');
       laVia.size(canvasW, canvasH);
@@ -136,7 +136,7 @@ export class ClaseDetailsComponent implements OnInit {
     function explicacionMandos(){
       laVia.hide();
 
-      mandos = p.createVideo('src/assets/primeraclase/partesvia.mov');
+      mandos = p.createVideo('/assets/primeraclase/partesvia.mov');
       mandos.parent('canvasP5');
       mandos.size(canvasW, canvasH);
       // mandos.speed(2);//comentar despues
@@ -148,12 +148,12 @@ export class ClaseDetailsComponent implements OnInit {
     }
 
     function actividadVia(){
+
       mandos.hide();
       
       laViaActividad.show();
 
       var button = p.select('.btn-next');
-      
       
       button.mousePressed(evaluarActividadVia);
 
@@ -233,7 +233,7 @@ export class ClaseDetailsComponent implements OnInit {
 
       feedbackContain.hide();
 
-      elVehiculo = p.createVideo('src/assets/mandos.mov');
+      elVehiculo = p.createVideo('/assets/mandos.mov');
       elVehiculo.parent('canvasP5');
       elVehiculo.size(canvasW, canvasH);
       // elVehiculo.speed(2);//comentar despues
@@ -245,11 +245,11 @@ export class ClaseDetailsComponent implements OnInit {
 
     //------------------------pregunta UNO------------
     function actividadVehiculo(){
+
       elVehiculo.hide();
       elVehiculoActividadUno.show();
 
-
-      /*var queryUno = p.createImg('src/assets/actividades/bg_actividadvehiculo/volante_img.png');
+      /*var queryUno = p.createImg('/assets/actividades/bg_actividadvehiculo/volante_img.png');
       queryUno.parent('img_act');
       queryUno.attribute('width', '100%');*/
 
@@ -257,7 +257,6 @@ export class ClaseDetailsComponent implements OnInit {
       var btnB = p.select('.option_b');
       var btnC = p.select('.option_c');
       var btnD = p.select('.option_d');
-
 
       /*btnA.html('Pedal de frenokkkk',true);
       btnB.html('Pedal de embrague',true);
@@ -281,6 +280,7 @@ export class ClaseDetailsComponent implements OnInit {
         // btnA.remove();
         // btnB.remove();
         // btnD.remove();
+        
       }
   
       function ActividadVehiculoBad_uno(){
@@ -321,8 +321,8 @@ export class ClaseDetailsComponent implements OnInit {
 
       btnA.mousePressed(ActividadVehiculoBad_uno);
       btnB.mousePressed(ActividadVehiculoBad_dos);
-      btnC.mousePressed(ActividadVehiculoGood);
-      btnD.mousePressed(ActividadVehiculoBad_tres);
+      btnC.mousePressed(ActividadVehiculoBad_tres);
+      btnD.mousePressed(ActividadVehiculoGood);
 
       var btnnext = p.select('.btn-next-auto-dos');
       btnnext.mousePressed(ActividadVehiculoTres);
@@ -370,19 +370,20 @@ export class ClaseDetailsComponent implements OnInit {
       var btnD = p.select('.option_d_tres');
 
       btnA.mousePressed(ActividadVehiculoBad_uno);
-      btnB.mousePressed(ActividadVehiculoBad_dos);
-      btnC.mousePressed(ActividadVehiculoGood);
+      btnB.mousePressed(ActividadVehiculoGood);
+      btnC.mousePressed(ActividadVehiculoBad_dos);
       btnD.mousePressed(ActividadVehiculoBad_tres);
 
       var btnnext = p.select('.btn-next-auto-tres');
       
-
       function ActividadVehiculoGood(){
+
         console.log("buena esa tres");
         btnC.addClass('selected');
         respuestasCorrectas++;
         
         evaluacionActividadVehiculo();
+        
       }
   
       function ActividadVehiculoBad_uno(){

@@ -89,7 +89,7 @@
 width: 100%;    
 height: 500px;
 
-background-image: url("/src/assets/curso/bg_curso_detail.png");
+background-image: url("/assets/curso/bg_curso_detail.png");
 background-origin: content-box;
 background-repeat: no-repeat;
 background-position: center;

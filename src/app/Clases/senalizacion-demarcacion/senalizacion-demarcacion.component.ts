@@ -90,17 +90,17 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       feedFinal.hide();
 
       explicacionSenalesVideo();
+      
 
     }
 
     function explicacionSenalesVideo(){
-     // explicacionSenales = p.createVideo('src/assets/senales/senalesdetransito.mov');
-     explicacionSenales = p.createVideo('src/assets/Actividadsenales/Pregunta1.mov');
+     explicacionSenales = p.createVideo('src/assets/senales/senalesdetransito.mp4');
+    //  explicacionSenales = p.createVideo('src/assets/Actividadsenales/Pregunta1.mov');
       explicacionSenales.parent('canvasP5video');
       explicacionSenales.size(canvasW, canvasH);
-      explicacionSenales.speed(2);//comentar despues
+      // explicacionSenales.speed(2);//comentar despues
       explicacionSenales.play();
-
       explicacionSenales.onended(preguntaUno);
     }
 
@@ -111,7 +111,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       videopreguntaUno = p.createVideo('src/assets/Actividadsenales/Pregunta1.mov');
       videopreguntaUno.parent('canvasP5video');
       videopreguntaUno.size(canvasW, canvasH);
-      videopreguntaUno.speed(2);//comentar despues
+      // videopreguntaUno.speed(2);//comentar despues
       videopreguntaUno.play();
 
       videopreguntaUno.onended(controlsPreguntaUno);
@@ -142,7 +142,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       
         videoRespuestaUno.parent('canvasP5video');
         videoRespuestaUno.size(canvasW, canvasH);
-        videoRespuestaUno.speed(2);//comentar despues
+        // videoRespuestaUno.speed(2);//comentar despues
         videoRespuestaUno.play();
 
         videoRespuestaUno.onended(preguntaDos);
@@ -161,7 +161,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       
         videoRespuestaUno.parent('canvasP5video');
         videoRespuestaUno.size(canvasW, canvasH);
-        videoRespuestaUno.speed(2);//comentar despues
+        // videoRespuestaUno.speed(2);//comentar despues
         videoRespuestaUno.play();
 
         videoRespuestaUno.onended(preguntaDos);
@@ -177,7 +177,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       videoPreguntaDos = p.createVideo('src/assets/Actividadsenales/Pregunta2.mov');
       videoPreguntaDos.parent('canvasP5video');
       videoPreguntaDos.size(canvasW, canvasH);
-      videoPreguntaDos.speed(2);//comentar despues
+      // videoPreguntaDos.speed(2);//comentar despues
       videoPreguntaDos.play();
 
       videoPreguntaDos.onended(controlsPreguntaDos);
@@ -210,7 +210,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       
         videoRespuestaDos.parent('canvasP5video');
         videoRespuestaDos.size(canvasW, canvasH);
-        videoRespuestaDos.speed(2);//comentar despues
+        // videoRespuestaDos.speed(2);//comentar despues
         videoRespuestaDos.play();
 
         videoRespuestaDos.onended(preguntaTres);
@@ -228,7 +228,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       
         videoRespuestaDos.parent('canvasP5video');
         videoRespuestaDos.size(canvasW, canvasH);
-        videoRespuestaDos.speed(2);//comentar despues
+        // videoRespuestaDos.speed(2);//comentar despues
         videoRespuestaDos.play();
 
         videoRespuestaDos.onended(preguntaTres);
@@ -245,7 +245,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       videoPreguntaTres = p.createVideo('src/assets/Actividadsenales/Pregunta3.mov');
       videoPreguntaTres.parent('canvasP5video');
       videoPreguntaTres.size(canvasW, canvasH);
-      videoPreguntaTres.speed(2);//comentar despues
+      // videoPreguntaTres.speed(2);//comentar despues
       videoPreguntaTres.play();
 
       videoPreguntaTres.onended(controlsPreguntaTres);
@@ -279,7 +279,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       
         videoRespuestaTres.parent('canvasP5video');
         videoRespuestaTres.size(canvasW, canvasH);
-        videoRespuestaTres.speed(2);//comentar despues
+        // videoRespuestaTres.speed(2);//comentar despues
         videoRespuestaTres.play();
 
         videoRespuestaTres.onended(preguntaCuatro);
@@ -297,7 +297,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       
         videoRespuestaTres.parent('canvasP5video');
         videoRespuestaTres.size(canvasW, canvasH);
-        videoRespuestaTres.speed(2);//comentar despues
+        // videoRespuestaTres.speed(2);//comentar despues
         videoRespuestaTres.play();
 
         videoRespuestaTres.onended(preguntaCuatro);
@@ -315,7 +315,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       videoPreguntaCuatro = p.createVideo('src/assets/Actividadsenales/Pregunta4.mov');
       videoPreguntaCuatro.parent('canvasP5video');
       videoPreguntaCuatro.size(canvasW, canvasH);
-      videoPreguntaCuatro.speed(2);//comentar despues
+      // videoPreguntaCuatro.speed(2);//comentar despues
       videoPreguntaCuatro.play();
 
       videoPreguntaCuatro.onended(controlsPreguntaCuatro);
@@ -347,7 +347,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       
         videoRespuestaCuatro.parent('canvasP5video');
         videoRespuestaCuatro.size(canvasW, canvasH);
-        videoRespuestaCuatro.speed(2);//comentar despues
+        // videoRespuestaCuatro.speed(2);//comentar despues
         videoRespuestaCuatro.play();
 
         videoRespuestaCuatro.onended(preguntaCinco);
@@ -365,7 +365,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       
         videoRespuestaCuatro.parent('canvasP5video');
         videoRespuestaCuatro.size(canvasW, canvasH);
-        videoRespuestaCuatro.speed(2);//comentar despues
+        // videoRespuestaCuatro.speed(2);//comentar despues
         videoRespuestaCuatro.play();
 
         videoRespuestaCuatro.onended(preguntaCinco);
@@ -383,7 +383,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       videoPreguntaCinco = p.createVideo('src/assets/Actividadsenales/Pregunta5.mov');
       videoPreguntaCinco.parent('canvasP5video');
       videoPreguntaCinco.size(canvasW, canvasH);
-      videoPreguntaCinco.speed(2);//comentar despues
+      // videoPreguntaCinco.speed(2);//comentar despues
       videoPreguntaCinco.play();
 
       videoPreguntaCinco.onended(controlsPreguntaCinco);
@@ -415,7 +415,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       
         videoRespuestaCinco.parent('canvasP5video');
         videoRespuestaCinco.size(canvasW, canvasH);
-        videoRespuestaCinco.speed(2);//comentar despues
+        // videoRespuestaCinco.speed(2);//comentar despues
         videoRespuestaCinco.play();
 
         videoRespuestaCinco.onended(preguntaSeis);
@@ -432,7 +432,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       
         videoRespuestaCinco.parent('canvasP5video');
         videoRespuestaCinco.size(canvasW, canvasH);
-        videoRespuestaCinco.speed(2);//comentar despues
+        // videoRespuestaCinco.speed(2);//comentar despues
         videoRespuestaCinco.play();
 
         videoRespuestaCinco.onended(preguntaSeis);
@@ -448,9 +448,8 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       videoPreguntaSeis = p.createVideo('src/assets/Actividadsenales/Pregunta6.mov');
       videoPreguntaSeis.parent('canvasP5video');
       videoPreguntaSeis.size(canvasW, canvasH);
-      videoPreguntaSeis.speed(2);//comentar despues
+      // videoPreguntaSeis.speed(2);//comentar despues
       videoPreguntaSeis.play();
-
       videoPreguntaSeis.onended(controlsPreguntaSeis);
 
     }
@@ -480,7 +479,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       
         videoRespuestaSeis.parent('canvasP5video');
         videoRespuestaSeis.size(canvasW, canvasH);
-        videoRespuestaSeis.speed(2);//comentar despues
+        // videoRespuestaSeis.speed(2);//comentar despues
         videoRespuestaSeis.play();
 
         videoRespuestaSeis.onended(finalClase);
@@ -497,7 +496,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       
         videoRespuestaSeis.parent('canvasP5video');
         videoRespuestaSeis.size(canvasW, canvasH);
-        videoRespuestaSeis.speed(2);//comentar despues
+        // videoRespuestaSeis.speed(2);//comentar despues
         videoRespuestaSeis.play();
 
         videoRespuestaSeis.onended(finalClase);
