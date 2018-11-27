@@ -28,6 +28,15 @@
     animation-duration: 0.8s;
 }
 
+:host i{
+
+    margin: 8px;
+    color: darkgray;
+    font-size: 1em;
+    cursor: pointer;
+
+}
+
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes example {
     from {transform: translateX(200%);}

@@ -36,6 +36,7 @@ export class MainClaseComponent implements OnInit {
   ngOnInit() {
     
     this.servicioclases.change.subscribe(openClass => {
+
       console.log(openClass);
       this.openClass = openClass;
       
@@ -55,7 +56,8 @@ export class MainClaseComponent implements OnInit {
   closeClass(){
 
     this.openClass=false;
-    location.reload();
+    this.modulo = null;
+    // location.reload();
     //console.log("d"+this.openClass);
 
   }

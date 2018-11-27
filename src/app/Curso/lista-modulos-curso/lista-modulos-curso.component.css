@@ -1,7 +1,41 @@
 
-.titleListaModulos{
+:host{
+
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+
+.containerList{
+    
     width: 30%;
-    margin-left: 8%;   
+    margin-left: 8%;
+    margin-top: 30vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    
+}
+
+.containerDetail{
+    margin-top: 15vh;
+    width: 60%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.titleListaModulos{
+    width: 90%;
+    /* margin-left: 8%;    */
     padding: 10px;
 
     border-bottom: solid;
@@ -12,18 +46,22 @@
 }
 
 .titleListaModulos h3{
+
     font-weight: 500;
+    text-align: center;
+
 }
 
 .lista-modulos{
     
-    width: 30%;
-    margin-left: 8%;
+    width: 100%;
+    
     
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+
     /* background-color: gray; */
     
     
@@ -48,7 +86,12 @@
     color: gray;
     transition: 0.4s;
     
+    
 }
+.lista-modulos a{
+    font-weight: 500;
+    font-size: 0.9em;
+} 
 
 .lista-modulos a:hover{
     background-color:lightgrey;
@@ -56,13 +99,40 @@
 }
 
 .lista-modulos a img{
-    width: 50%;
+    width: 60px;
+    /* height: 100px; */
+    
     -webkit-filter: blur(5px); /* Safari */
     filter: invert(30%);
     
 }
 
+.modulo-detalles-noselected{
 
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /* position: relative; */
+    /* margin-left: 38%; */
+    /* margin-top: -70vh; */
+     /* margin-top: -650px;  */
+     margin-top: 30%; 
+
+    padding: 10px;
+    
+    width: 80%;
+    height: 10%;
+    border-radius: 5px;
+    border: solid 1px;
+    color: gray;
+    /* background-color:white; */
+
+}
 
 .modulo-detalles{
 
@@ -70,26 +140,43 @@
     flex-direction: column;
     flex-wrap: nowrap;
     /* align-items: center; */
-    justify-content: flex-end;
+    justify-content: flex-start;
 
-    position: relative;
-    margin-left: 38%;
+    /* position: relative; */
+    /* margin-left: 38%; */
     /* margin-top: -70vh; */
-     margin-top: -650px; 
+     /* margin-top: -650px;  */
+     /* margin-top: -10%;  */
+
     padding: 10px;
     
-    width: 60%;
+    width: 100%;
+    height: 80vh;
+
     border-radius: 5px;
     background-color:white;
     
+}
+.modulo-detalles i{
+    margin: 5px;
+    font-size: 1.3em;
+
+}
+.modulo-detalles h3{
+    font-size: 1.1em;
+    color: rgba(140,157,255,1);
+}
+.modulo-detalles p{
+    font-size: 0.8em;
+    color: darkslategray;
 }
 
 
 .img-modulo-detalles{
 width: 100%;    
-height: 500px;
+height: 350px;
 
-background-image: url("/assets/curso/bg_curso_detail.png");
+
 background-origin: content-box;
 background-repeat: no-repeat;
 background-position: center;
@@ -101,20 +188,38 @@ align-items: center;
 transition: 1.9s;
 
 }
-.img-modulo-detalles:hover{
+
+.img-adaptacion{
+    background-image: url("/assets/curso/bg_curso_detail.png");
+}
+
+.img-etica{
+    background-image: url("/assets/curso/conflictos.jpg");
+}
+.img-mecanica{
+    background-image: url("/assets/curso/mecanica.jpg");
+}
+.marco-legal{
+    background-image: url("/assets/curso/marcolegal.jpg");
+}
+.tecnicas-conduccion{
+    background-image: url("/assets/curso/tecnicas.jpg");
+}
+/* .img-modulo-detalles:hover{
 
     background-position: top;
     transition: 1.9s;
-}
+} */
 
 .img-modulo-detalles h2{
 color: white;
+font-size: 1.1em;
 }
 
 .img-modulo-detalles a{
     color: white;
     text-decoration: none;
-    
+    font-size: 0.9em;
     padding: 8px;
     border-radius: 5px;
 }

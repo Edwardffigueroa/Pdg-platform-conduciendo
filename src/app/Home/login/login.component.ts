@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { OpenLoginService } from '../open-login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  @HostBinding('class.is-open')
+  openLogin = false;
+
+  constructor(
+    private servicioOpenLogin: OpenLoginService
+  ) { }
 
   ngOnInit() {
+    this.servicioOpenLogin.change.subscribe(openLogin =>{
+      this.openLogin = openLogin;
+    })
   }
 
+  closeLogin(){
+
+    this.openLogin = false;
+
+  }
 }

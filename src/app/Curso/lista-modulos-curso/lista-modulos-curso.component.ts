@@ -23,7 +23,7 @@ export class ListaModulosCursoComponent implements OnInit {
 
   ngOnInit() {
 
-    this.moduloSeleccionado = this.modulos[0];
+    // this.moduloSeleccionado = this.modulos[0];
     
   }
 
@@ -34,7 +34,9 @@ export class ListaModulosCursoComponent implements OnInit {
   }
 
   openSelectedClass(mdl: Modulo){
+
     this.servicioclases.abrirClase(mdl);
+    
   }
 
 }

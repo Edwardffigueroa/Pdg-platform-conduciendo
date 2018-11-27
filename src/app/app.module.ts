@@ -9,6 +9,11 @@ import { InicioMenuComponent } from './Home/inicio-menu/inicio-menu.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CursoModule } from './Curso/curso.module';
 import { LoginComponent } from './Home/login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material';
+
+
+
 
 
 @NgModule({
@@ -16,13 +21,17 @@ import { LoginComponent } from './Home/login/login.component';
     AppComponent,
     InicioComponent,
     InicioMenuComponent,
-    LoginComponent
+    LoginComponent,
     
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule, 
-    CursoModule
+    CursoModule,
+    BrowserAnimationsModule,
+    MaterialModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

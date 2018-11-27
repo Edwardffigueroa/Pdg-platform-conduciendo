@@ -32,13 +32,16 @@
 .infoClass #canvasP5{
 
     width: 100%;
-    height: 70vh; 
+    height: 75vh; 
     /* background-color: black; */
     background-image: url("/assets/curso/bg_curso_detail.png");
     background-origin: border-box;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    /* -webkit-filter: blur(10px); 
+    filter: blur(10px); */
 
     display: flex;
     flex-direction: column;
@@ -48,6 +51,11 @@
     align-content: center;
 
 }
+
+#canvasP5>h2{
+    color: white;
+}
+
 
 #canvasP5video{
     width: 100%;

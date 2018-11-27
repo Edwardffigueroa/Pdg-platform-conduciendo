@@ -1,5 +1,8 @@
+
+<div class="containerList">
+
 <div class="titleListaModulos">
-<h3>Selecciona el módulo a desarrollar</h3>
+<h3>Selecciona el tema a desarrollar</h3>
 </div>
 <div class="lista-modulos">
 
@@ -11,18 +14,33 @@
 
   </div>
 
-  <div class="modulo-detalles" *ngIf="moduloSeleccionado" >
+</div>
 
-    <div class="img-modulo-detalles">
+<div class="containerDetail">
+
+  <div class="modulo-detalles-noselected" *ngIf="moduloSeleccionado==null">
+      <h2><i class="fas fa-arrow-left"></i> Selecciona un tema para empezar</h2>
+  </div>
+  
+  <div class="modulo-detalles" *ngIf="moduloSeleccionado" >
+    
+    <div class="img-modulo-detalles" [class.img-adaptacion]="moduloSeleccionado.nombre ==='Adaptación al medio'" [class.img-etica]="moduloSeleccionado.nombre ==='Ética y prevención de conflictos'"
+     [class.img-mecanica]="moduloSeleccionado.nombre ==='Mecánica básica'"
+     [class.marco-legal]="moduloSeleccionado.nombre ==='Marco legal'"
+     [class.tecnicas-conduccion]="moduloSeleccionado.nombre ==='Tecnicas de conducción'"
+     
+     >
       <h2>Empezar {{moduloSeleccionado.nombre}}</h2>
       <a class="button" (click)="openSelectedClass(moduloSeleccionado)"> Ir a Clases </a>
     </div>
 
     <h3>{{moduloSeleccionado.nombre}}</h3>
     <p>{{moduloSeleccionado.descripcion}}</p>
-    <p><b>Duración</b> {{moduloSeleccionado.duracion}} minutos aproximadamente</p>
+    <p><i class="far fa-clock"></i> <b>Duración:</b> {{moduloSeleccionado.duracion}} minutos aproximadamente</p>
+    <p><i class="far fa-edit"></i> <b>Numero de clases:</b> {{moduloSeleccionado.clases.length}}</p>
 
   </div>
 
+</div>
 
   

@@ -1,6 +1,7 @@
 .menu-inicio{
+
     width: 100%;
-    height: 80px;
+    height: 70px;
     /* background-color:blueviolet; */
 
     display: flex;
@@ -37,5 +38,6 @@ ul li{
     list-style: none;
     margin: 10px;
     color: white;
+    font-weight: 600;
 
 }

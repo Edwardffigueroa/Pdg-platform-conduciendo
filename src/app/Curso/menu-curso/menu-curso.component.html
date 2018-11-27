@@ -3,14 +3,13 @@
   <p class="logo"><img src="/assets/banner.png" alt=""></p>
   <hr>
   <ul>
-    <li>MENU</li>
-      <li><i class="fas fa-home"></i> <p class="textMenu" [class.show]="overed" >Inicio</p> </li>
-      <li><i class="fas fa-pen"></i> <p class="textMenu" [class.show]="overed">Clases</p></li>
-      <li><i class="fas fa-wrench"></i> <p class="textMenu" [class.show]="overed">Configuración</p></li>
+      <li routerLink ="/curso" class="selected" ><img src="/src/assets/curso/icons/home_white.png" alt=""> <p class="textMenu" [class.show]="overed" >Inicio</p> </li>
+      <li><img src="/src/assets/curso/icons/class_white.png" alt=""><p class="textMenu" [class.show]="overed">Clases</p></li>
+      <li><img src="/src/assets/curso/icons/setup_white.png" alt=""> <p class="textMenu" [class.show]="overed">Configuración</p></li>
   </ul>
 
   <hr>
 
-  <a routerLink ="Inicio" class="textMenu" [class.show]="overed">CERRAR SESIÓN</a>
+  <a routerLink ="/"> <img src="/assets/curso/icons/logout_white.png" alt=""> <p class="textMenu" [class.show]="overed" > Salir</p></a>
 
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OpenLoginService } from '../open-login.service';
 
 @Component({
   selector: 'app-inicio-menu',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private servicioOpenLogin: OpenLoginService
+  ) {}
 
   ngOnInit() {
+  }
+
+  openLogin(){
+    this.servicioOpenLogin.abrirLogin();
   }
 
 }

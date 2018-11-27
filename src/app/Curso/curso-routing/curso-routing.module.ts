@@ -11,7 +11,7 @@ const cursoRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(cursoRoutes)
-  ],
+  ],exports: [ RouterModule ],
   declarations: []
 })
 export class CursoRoutingModule { }

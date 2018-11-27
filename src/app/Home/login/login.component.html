@@ -1,14 +1,26 @@
+<div class="closeLogin"> <p (click)="closeLogin()"><i class="fas fa-times"></i> </p>  </div>
 <div class="inicio-sesion">
   
   <div class="form">
+
     <h2>Iniciar sesión</h2>
-    <p>¿Aún no tienes una cuenta? <b>Registrate</b></p>
+
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="bold">Estudiante</mat-button-toggle>
+        <mat-button-toggle value="italic">Profesor</mat-button-toggle>
+      </mat-button-toggle-group>
 
     <form action="">
 
-      <input type="text" placeholder="Usuario">
-      <input type="password" placeholder="contraseña">
-      <input type="button" value="send">
+      <mat-form-field class="example-full-width">
+        <input matInput required type="number" placeholder="Usuario">
+      </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+        <input matInput required type="password" placeholder="Contraseña"> 
+      </mat-form-field>
+      <br>
+      <input type="button" value="Entrar" routerLink="/curso">
 
     </form>
 
