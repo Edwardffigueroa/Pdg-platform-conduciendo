@@ -31,7 +31,7 @@
 .mainMenuClase .buttonClass{
 
     width: 30%;
-    
+    /* height: 8vh; */
     color: black;
     padding: 0px 15px;
     margin: 5px;

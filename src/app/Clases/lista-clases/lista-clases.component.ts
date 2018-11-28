@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { Modulo } from 'src/app/modulos';
 import { Clases } from '../clases';
+import { ProcessPersistanceService } from '../process-persistance.service';
 
 @Component({
   selector: 'app-lista-clases',
@@ -17,10 +18,28 @@ export class ListaClasesComponent implements OnInit {
   clases:Clases[];
   //clases = this.modulo.clases;
   //clases: Clases[] = this.modulo.clases;
+
+  readySignals:boolean;
+  readyNormas:boolean;
+  readyVehiculo:boolean;
   
-  constructor() { }
+  constructor(
+    private persister: ProcessPersistanceService
+  ) { }
 
   ngOnInit() {
+
+    this.readySignals =false;
+    this.readyNormas =false;
+    this.readyVehiculo =false;
+
+    const respose = this.persister.get('ClassStateSignals');
+    
+    if(respose!=null){
+    if(respose.finish ==='yes'){
+      this.readySignals=true;
+    }
+  }
 
     if(this.modulo!=undefined){
       

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import * as p5 from 'p5';
 import 'p5/lib/addons/p5.dom';
 import { Clases } from '../clases';
+import { ProcessPersistanceService } from '../process-persistance.service';
 
 
 @Component({
@@ -17,12 +18,21 @@ export class SenalizacionDemarcacionComponent implements OnInit {
 
   signalsReady: boolean;
 
-  constructor() { }
+  constructor(
+    private persister: ProcessPersistanceService
+  ) { }
 
   ngOnInit() {
 
     this.signalsReady=false;
     
+    const respose = this.persister.get('ClassStateSignals');
+    console.log(respose);
+    if(respose!=null){
+    if(respose.finish ==='yes'){
+      this.signalsReady=true;
+    }
+  }
   }
 
   empezar(){
@@ -82,6 +92,9 @@ export class SenalizacionDemarcacionComponent implements OnInit {
 
     p.setup = () =>{
 
+
+      
+
       this.signalsReady = false;
 
       p.createCanvas(0, 0);
@@ -117,15 +130,17 @@ export class SenalizacionDemarcacionComponent implements OnInit {
 
     function explicacionSenalesVideo(){
 
+      
+
     controlVideo.show();
     var playpause = false;
     
-     explicacionSenales = p.createVideo('src/assets/senales/senalesdetransito.mp4');
-    //  explicacionSenales = p.createVideo('src/assets/Actividadsenales/Pregunta1.mov');
+    //  explicacionSenales = p.createVideo('src/assets/senales/senalesdetransito.mp4');
+     explicacionSenales = p.createVideo('src/assets/Actividadsenales/Pregunta1.mov');
 
       explicacionSenales.parent('canvasP5video');
       explicacionSenales.size(canvasW, canvasH);
-      // explicacionSenales.speed(2);//comentar despues
+      explicacionSenales.speed(2);//comentar despues
       explicacionSenales.play();
       explicacionSenales.onended(preguntaUno);
 
@@ -162,7 +177,11 @@ export class SenalizacionDemarcacionComponent implements OnInit {
 
     }
 
+    
+
     function preguntaUno(){
+
+      
 
       controlsVid.hide();
       explicacionSenales.hide();
@@ -198,6 +217,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
         console.log("muy bien");
         respuestasCorrectas ++;
         videopreguntaUno.hide();
+        videopreguntaUno.stop();
         controlsUnoPregunta.hide();
 
         controlVideo.show();
@@ -218,6 +238,8 @@ export class SenalizacionDemarcacionComponent implements OnInit {
 
         console.log("muy bad");
         videopreguntaUno.hide();
+        videopreguntaUno.stop();
+        
         controlsUnoPregunta.hide();
         controlVideo.show();
         respuestasIncorrectas ++;
@@ -254,7 +276,6 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       controlVideo.hide();
       controlsDosPregunta.show();
       
-
       var preguntaUnoA = p.select('.preguntaDosA');
       var preguntaUnoB = p.select('.preguntaDosB');
       var preguntaUnoC = p.select('.preguntaDosC');
@@ -272,6 +293,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
         respuestasCorrectas++;
         console.log("muy bien");
         videoPreguntaDos.hide();
+        videoPreguntaDos.stop();
         controlsDosPregunta.hide();
 
         controlVideo.show();
@@ -292,6 +314,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
         respuestasIncorrectas++;
         console.log("muy bad");
         videoPreguntaDos.hide();
+        videoPreguntaDos.stop();
         controlsDosPregunta.hide();
 
         controlVideo.show();
@@ -347,6 +370,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
         respuestasCorrectas++;
         console.log("muy bien");
         videoPreguntaTres.hide();
+        videoPreguntaTres.stop();
         controlsTresPregunta.hide();
         
         controlVideo.show();
@@ -367,6 +391,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
         respuestasIncorrectas++;
         console.log("muy bad");
         videoPreguntaTres.hide();
+        videoPreguntaTres.stop();
         controlsTresPregunta.hide();
 
         controlVideo.show();
@@ -421,6 +446,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
         respuestasCorrectas++;
         console.log("muy bien");
         videoPreguntaCuatro.hide();
+        videoPreguntaCuatro.stop();
         controlsCuatroPregunta.hide();
         controlVideo.show();
 
@@ -440,6 +466,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
         respuestasIncorrectas++;
         console.log("muy bad");
         videoPreguntaCuatro.hide();
+        videoPreguntaCuatro.stop();
         controlsCuatroPregunta.hide();
         controlVideo.show();
         videoRespuestaCuatro = p.createVideo('src/assets/Actividadsenales/Respuesta4.mov');
@@ -495,6 +522,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
 
         console.log("muy bien");
         videoPreguntaCinco.hide();
+        videoPreguntaCinco.stop();
         controlsCincoPregunta.hide();
         controlVideo.show();
 
@@ -513,6 +541,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
         respuestasIncorrectas++;
         console.log("muy bad");
         videoPreguntaCinco.hide();
+        videoPreguntaCinco.stop();
         controlsCincoPregunta.hide();
         controlVideo.show();
         videoRespuestaCinco = p.createVideo('src/assets/Actividadsenales/Respuesta5.mov');
@@ -543,6 +572,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
     }
 
     function controlsPreguntaSeis(){
+
       controlVideo.hide();
       controlsSeisPregunta.show();
       
@@ -563,6 +593,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
         respuestasCorrectas++;
         console.log("muy bien");
         videoPreguntaSeis.hide();
+        videoPreguntaSeis.stop();
         controlsSeisPregunta.hide();
         
         controlVideo.show();
@@ -579,11 +610,12 @@ export class SenalizacionDemarcacionComponent implements OnInit {
       }
 
       function respuestaIncorrecta(){
+
         respuestasIncorrectas++;
         console.log("muy bad");
         videoPreguntaSeis.hide();
+        videoPreguntaSeis.stop();
         controlsSeisPregunta.hide();
-
         controlVideo.show();
 
         videoRespuestaSeis = p.createVideo('src/assets/Actividadsenales/Respuesta6.mov');
@@ -599,9 +631,19 @@ export class SenalizacionDemarcacionComponent implements OnInit {
 
     }
 
+    var foca = () => {
+
+      const myData = {finish: 'yes'};
+         this.persister.set('ClassStateSignals',myData);
+ 
+     };
+
     function finalClase(){
 
-      this.signalsReady = true;
+      // this.signalsReady = true;
+      
+      foca();
+      
       videoRespuestaSeis.hide();
       feedFinal.show();
 
@@ -613,6 +655,7 @@ export class SenalizacionDemarcacionComponent implements OnInit {
 
       var delayInMilliseconds = 5000; //1 second
 
+      
 
       controlVideo.hide();
 

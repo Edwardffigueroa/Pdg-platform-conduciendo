@@ -9,8 +9,13 @@
  [class.selected]="clase === claseSeleccionada" >
 
   <!-- <img src="/src/assets/banner.png" alt=""> -->
-  <h3>{{clases.indexOf(clase)+1}} . {{clase.name}}</h3>
-  <p>Duración: {{clase.duracion}} minutos </p>
+  <h3>{{clases.indexOf(clase)+1}} . {{clase.name}} 
+
+    <i *ngIf="clase.name==='Señalización y demarcación vial' && readySignals==true ||clase.name==='Autoridades y normas de trásito' && readyNormas ==true || clase.name==='El vehículo y la vía' &&  readyVehiculo ==true " class="fas fa-check-circle"></i> 
+
+  </h3> 
+  <p>Duración: {{clase.duracion}} minutos </p> 
+  
 
 </div> 
 
