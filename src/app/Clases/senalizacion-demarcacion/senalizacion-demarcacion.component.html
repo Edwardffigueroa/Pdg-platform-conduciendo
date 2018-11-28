@@ -3,31 +3,50 @@
 <div class="infoClass">
   
 <div id="canvasP5">
-    <h2>{{clase.name}}</h2>
+    <!-- <h2>{{clase.name}}</h2> -->
+
+    <div class="finished" *ngIf="signalsReady===true">
+        <h1>Has Acabado con éxito!</h1>
+        <i class="fas fa-check-circle"></i>
+    </div>
     <a class="btn-start" (click)="empezar()">Empezar</a>
 
     <div id="canvasP5video"></div>
+
+    <div class="controlVideo">
+
+         <div class="controlsVid">
+
+             <!-- <div class="playVideo">Play</div> -->
+             <div class="pauseVideo"> <i class="fas fa-pause"></i> / <i class="fas fa-play"></i></div>
+             <div class="repeat"><i class="fas fa-sync-alt"></i></div>
+
+         </div> 
+
+    </div>
+
 
     <div class="containerControlUno">
 
         <div class="controls">
 
-            <div class="btn preguntaUnoA">A. Zona de reciclaje</div>
-            <div class="btn preguntaUnoB">B. Retorno</div>
-            <div class="btn preguntaUnoC">C. Berma</div>
-            <div class="btn preguntaUnoD">D. Glorieta</div>
+            <div class="btn preguntaUnoA"> <b>A.</b> Zona de reciclaje</div>
+            <div class="btn preguntaUnoB"> <b>B.</b> Retorno</div>
+            <div class="btn preguntaUnoC"> <b>C.</b> Berma</div>
+            <div class="btn preguntaUnoD"> <b>D.</b>  Glorieta</div>
 
         </div>
+
     </div>
 
     <div class="containerControlDos">
 
         <div class="controls">
 
-            <div class="btn preguntaDosA">A. Altura del puente</div>
-            <div class="btn preguntaDosB">B. Distancia hasta el puente</div>
-            <div class="btn preguntaDosC">C. El ancho del puente</div>
-            <div class="btn preguntaDosD">D. Peso que soporta el puente</div>
+            <div class="btn preguntaDosA"><b>A.</b> Altura del puente</div>
+            <div class="btn preguntaDosB"><b>B.</b> Distancia hasta el puente</div>
+            <div class="btn preguntaDosC"><b>C.</b> El ancho del puente</div>
+            <div class="btn preguntaDosD"><b>D.</b> Peso que soporta el puente</div>
 
         </div>
 
@@ -37,11 +56,11 @@
 
         <div class="controls">
 
-            <div class="btn preguntaTresA">A. Preventiva</div>
+            <div class="btn preguntaTresA"><b>A.</b> Preventiva</div>
             <!-- correcta B -->
-            <div class="btn preguntaTresB">B. Reglamentaria</div>
-            <div class="btn preguntaTresC">C. Informativa</div>
-            <div class="btn preguntaTresD">D. Transitoria</div>
+            <div class="btn preguntaTresB"><b>B.</b> Reglamentaria</div>
+            <div class="btn preguntaTresC"><b>C.</b> Informativa</div>
+            <div class="btn preguntaTresD"><b>D.</b> Transitoria</div>
 
         </div>
 
@@ -51,11 +70,11 @@
 
         <div class="controls">
 
-            <div class="btn preguntaCuatroA">A. De nomenclatura</div>
-            <div class="btn preguntaCuatroB">B. Solo informativa</div>
+            <div class="btn preguntaCuatroA"><b>A.</b> De nomenclatura</div>
+            <div class="btn preguntaCuatroB"><b>B.</b> Solo informativa</div>
             <!-- correcta C -->
-            <div class="btn preguntaCuatroC">C. De seguridad vial</div>
-            <div class="btn preguntaCuatroD">D. Información previa de destino</div>
+            <div class="btn preguntaCuatroC"><b>C.</b> De seguridad vial</div>
+            <div class="btn preguntaCuatroD"><b>D.</b> Información previa de destino</div>
 
         </div>
 
@@ -64,10 +83,10 @@
     <div class="containerControlCinco">
         <div class="controls">
             <!-- respues zona militar -->
-            <div class="btn preguntaCincoA">A. Paso peatonal</div>
-            <div class="btn preguntaCincoB">B. Zona militar</div>
-            <div class="btn preguntaCincoC">C. Artesanías</div>
-            <div class="btn preguntaCincoD">D. Velocidad máxima</div>
+            <div class="btn preguntaCincoA"><b>A.</b> Peatones en la vía</div>
+            <div class="btn preguntaCincoB"><b>B.</b> Zona militar</div>
+            <div class="btn preguntaCincoC"><b>C.</b> Artesanías</div>
+            <div class="btn preguntaCincoD"><b>D.</b> Velocidad máxima</div>
 
         </div>
     </div>
@@ -76,18 +95,23 @@
 
         <div class="controls">
             <!-- respuesta resalto C-->
-            <div class="btn preguntaSeisA">A. Depresión</div>
-            <div class="btn preguntaSeisB">B. Superficie rizada</div>
-            <div class="btn preguntaSeisC">C. Resalto</div>
-            <div class="btn preguntaSeisD">D. Tunel</div>
+            <div class="btn preguntaSeisA"><b>A.</b> Depresión</div>
+            <div class="btn preguntaSeisB"><b>B.</b> Superficie rizada</div>
+            <div class="btn preguntaSeisC"><b>C.</b> Resalto</div>
+            <div class="btn preguntaSeisD"><b>D.</b> Tunel</div>
 
         </div>
 
     </div>
 
     <div class="feed-final-senales">
+
             <div class="retroAlimentacionMala">
-                <h2>Muy bien has acabado tu tercera clase de {{clase.name}}</h2>
+                <i class="fas fa-check-circle"></i>
+                <p class="f_correcta" >Respuestas Acertadas: <b>3</b> </p>
+                <p class="f_incorrecta" >Respuestas Erróneas: <b>3</b> </p>
+                <h2>¡Muy bien has acabado tu tercera clase <br> de {{clase.name}}!</h2>
+                <!-- <a class="btn-start" (click)="empezar()">Reiniciar</a> -->
             </div>
         </div>
 
