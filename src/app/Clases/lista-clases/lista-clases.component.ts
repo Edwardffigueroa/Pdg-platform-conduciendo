@@ -40,7 +40,13 @@ export class ListaClasesComponent implements OnInit {
       this.readySignals=true;
     }
   }
-
+    const resposeDos = this.persister.get('ClassStateNormas');
+  
+    if(resposeDos!=null){
+      if(resposeDos.finish ==='yes'){
+        this.readyNormas=true;
+      }
+    }
     if(this.modulo!=undefined){
       
     this.clases = this.modulo.clases;

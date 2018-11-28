@@ -135,12 +135,12 @@ export class SenalizacionDemarcacionComponent implements OnInit {
     controlVideo.show();
     var playpause = false;
     
-    //  explicacionSenales = p.createVideo('src/assets/senales/senalesdetransito.mp4');
-     explicacionSenales = p.createVideo('src/assets/Actividadsenales/Pregunta1.mov');
+     explicacionSenales = p.createVideo('src/assets/senales/senalesdetransito.mp4');
+    //  explicacionSenales = p.createVideo('src/assets/Actividadsenales/Pregunta1.mov');
 
       explicacionSenales.parent('canvasP5video');
       explicacionSenales.size(canvasW, canvasH);
-      explicacionSenales.speed(2);//comentar despues
+      // explicacionSenales.speed(2);//comentar despues
       explicacionSenales.play();
       explicacionSenales.onended(preguntaUno);
 

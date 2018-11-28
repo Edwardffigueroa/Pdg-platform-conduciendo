@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import * as p5 from 'p5';
 import 'p5/lib/addons/p5.dom';
 import { Clases } from '../clases';
+import { ProcessPersistanceService } from '../process-persistance.service';
 
 @Component({
   selector: 'app-normas-transito',
@@ -14,10 +15,24 @@ export class NormasTransitoComponent implements OnInit {
 
   @Input() clase: Clases;
 
-  constructor() { }
+  normasReady: boolean;
+
+  constructor(
+    private persister: ProcessPersistanceService
+  ) { }
 
   ngOnInit() {
 
+    this.normasReady =false;
+
+    const respose = this.persister.get('ClassStateNormas');
+    console.log(respose);
+    if(respose!=null){
+    if(respose.finish ==='yes'){
+      this.normasReady=true;
+    }
+  }
+  
   }
 
   empezar(){
@@ -35,7 +50,7 @@ export class NormasTransitoComponent implements OnInit {
       //variables
     var canvasDiv = document.getElementById('canvasP5');
     var canvasW = canvasDiv.clientWidth;
-    var canvasH = canvasDiv.clientHeight;
+    var canvasH = canvasDiv.clientHeight-70;
     var btnStart;
 
     var primerRetoVideo;
@@ -61,11 +76,17 @@ export class NormasTransitoComponent implements OnInit {
 
     var feedFinal;
 
-    var wait;
-
+    // var wait;
+    var controlVideo;
+    var controlsVid;
     
 
     p.setup = () =>{
+
+      this.normasReady =false;
+
+      p.createCanvas(0, 0);
+      p.remove();
 
       btnStart = p.select('.btn-start');
       btnStart.hide();
@@ -93,9 +114,14 @@ export class NormasTransitoComponent implements OnInit {
 
       tercerRetoControls =p.select('.tercerRetoControlsContainer');
       tercerRetoControls.hide();
-      wait =p.select('.text-wait');
-      wait.show();
+      // wait =p.select('.text-wait');
+      // wait.show();
       
+      controlVideo = p.select('.controlVideo');
+      controlVideo.hide();
+
+      controlsVid = p.select('.controlsVid');
+
       primerReto();
 
     }
@@ -123,9 +149,9 @@ export class NormasTransitoComponent implements OnInit {
 
     //  }
 
-      if(primerRetoVideo.time()>2){
-        wait.hide();
-     }
+    //   if(primerRetoVideo.time()>2){
+    //     wait.hide();
+    //  }
 
     }
 
@@ -133,21 +159,56 @@ export class NormasTransitoComponent implements OnInit {
 
     function primerReto(){
 
+      controlVideo.show();
+      var playpause = false;
       primerRetoVideo = p.createVideo('/assets/actividadexplicativa/1.mov');
       
       primerRetoVideo.parent('canvasP5video');
       primerRetoVideo.size(canvasW, canvasH);
       
       // primerRetoVideo.speed(2);//comentar despues
-      
-      
+    
       primerRetoVideo.play();
 
       primerRetoVideo.onended(primerRetoSelectores);
 
+
+      var paused = p.select('.pauseVideo');
+      paused.mousePressed(pausado);
+
+      var reload = p.select('.repeat');
+      reload.mousePressed(reiniciar);
+
+      function pausado(){
+
+        playpause = !playpause;
+        if(playpause==false){
+
+          primerRetoVideo.play();
+          paused.removeClass('paused');
+
+        }else{
+
+          primerRetoVideo.pause();
+          paused.addClass('paused');
+
+        }
+        
+      }
+
+      function reiniciar(){
+
+        primerRetoVideo.stop();
+        primerRetoVideo.play();
+      
+      }
+
     }
 
     function primerRetoSelectores(){
+
+      controlVideo.hide();
+
       // console.log(primerRetoVideo.time());
       primerRetoControls.show();
 
@@ -182,6 +243,8 @@ export class NormasTransitoComponent implements OnInit {
 
     function primerRetoExplicacion(){
 
+      controlVideo.show();
+      controlsVid.hide();
       retroalimenatacionBuena.hide();
       retroalimenatacionMala.hide();
       
@@ -198,6 +261,9 @@ export class NormasTransitoComponent implements OnInit {
 
     function segundoReto(){
 
+      controlVideo.show();
+      controlsVid.hide();
+
       primerRetoExplicacionVideo.hide();
       
       segundoRetoVideo = p.createVideo('/assets/actividadexplicativa/3.mov');
@@ -212,6 +278,8 @@ export class NormasTransitoComponent implements OnInit {
     }
 
     function segundoRetoSelectores(){
+      controlVideo.hide();
+      
 
       segundoRetoControls.show();
       var girar_izquierda = p.select('.girar_izquierda');
@@ -250,6 +318,9 @@ export class NormasTransitoComponent implements OnInit {
 
     function segundoRetoExplicacion(){
 
+      controlVideo.show();
+      controlsVid.hide();
+
        retroalimenatacionBuenaSegunda.hide();
        retroalimenatacionMalaSegunda.hide();
        
@@ -265,6 +336,8 @@ export class NormasTransitoComponent implements OnInit {
       }
 
       function tercerReto(){
+        controlVideo.show();
+        controlsVid.hide();
 
         segundoRetoExplicacionVideo.hide();
 
@@ -280,6 +353,9 @@ export class NormasTransitoComponent implements OnInit {
       }
 
       function tercerRetoSelectroes(){
+
+        controlVideo.hide();
+      
 
         tercerRetoControls.show();
 
@@ -318,6 +394,9 @@ export class NormasTransitoComponent implements OnInit {
 
       function tercerRetoExplicacion(){
 
+        controlVideo.show();
+      controlsVid.hide();
+
         retroalimenatacionMalaTercera.hide();      
         retroalimenatacionBuenaTercera.hide();
 
@@ -330,7 +409,17 @@ export class NormasTransitoComponent implements OnInit {
 
       }
 
+      var foca = () => {
+
+        const myData = {finish: 'yes'};
+           this.persister.set('ClassStateNormas',myData);
+    
+       };
+
       function finalClase(){
+
+        foca();
+
         tercerRetoExplicacionVideo.hide();
         feedFinal.show();
 
@@ -338,7 +427,7 @@ export class NormasTransitoComponent implements OnInit {
 
         setTimeout(function() {
           
-          feedFinal.hide();
+          // feedFinal.hide();
           
   
         }, delayInMilliseconds);

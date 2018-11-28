@@ -83,6 +83,9 @@ export class ClaseDetailsComponent implements OnInit {
 
     p.setup = () => {
 
+      p.createCanvas(0, 0);
+      p.remove();
+
       btnStart = p.select('.btn-start');
       btnStart.hide();
       

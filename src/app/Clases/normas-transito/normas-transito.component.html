@@ -3,12 +3,28 @@
 <div class="infoClass">
   
 <div id="canvasP5">
-    <h2>{{clase.name}}</h2>
+    <!-- <h2>{{clase.name}}</h2> -->
+    <div class="finished" *ngIf="normasReady===true">
+            <h1>Has Acabado con éxito!</h1>
+            <i class="fas fa-check-circle"></i>
+        </div>
     <a class="btn-start" (click)="empezar()">Empezar</a>
-    <p class="text-wait">Espera...</p>
+    <!-- <p class="text-wait">Espera...</p> -->
     <div id="canvasP5video">
         
     </div>
+
+    <div class="controlVideo">
+
+            <div class="controlsVid">
+   
+                <!-- <div class="playVideo">Play</div> -->
+                <div class="pauseVideo"> <i class="fas fa-pause"></i> / <i class="fas fa-play"></i></div>
+                <div class="repeat"><i class="fas fa-sync-alt"></i></div>
+   
+            </div> 
+   
+       </div>
 
     <!-- <div class="videoControls"></div> -->
     
@@ -26,12 +42,14 @@
 
 <div class="retroAlimentacionBuenaContainer">
     <div class="retroAlimentacionBuena">
+            <i class="fas fa-check-circle"></i>
       <h2>Respuesta correcta</h2>
       <div class="continuar_btn_correct btn_next">Ver explicación</div>
     </div>
 </div>
 <div class="retroAlimentacionMalaContainer">
     <div class="retroAlimentacionMala">
+        <i class="fas fa-times-circle"></i>
         <h2>Respuesta Incorrecta</h2>
         <div class="continuar_btn_bad btn_next">Ver explicación</div>
     </div>
@@ -51,12 +69,14 @@
 
   <div class="retroAlimentacionBuenaContainerSegundo">
       <div class="retroAlimentacionBuena">
+            <i class="fas fa-check-circle"></i>
         <h2>Respuesta correcta</h2>
         <div class="continuar_btn_correct_segundo btn_next">Ver explicación</div>
       </div>
   </div>
   <div class="retroAlimentacionMalaContainerSegundo">
       <div class="retroAlimentacionMala">
+            <i class="fas fa-times-circle"></i>
           <h2>Respuesta Incorrecta</h2>
           <div class="continuar_btn_bad_segundo btn_next">Ver explicación</div>
       </div>
@@ -75,12 +95,14 @@
 
     <div class="retroAlimentacionBuenaContainerTercero">
         <div class="retroAlimentacionBuena">
+                <i class="fas fa-check-circle"></i>
           <h2>Respuesta correcta</h2>
           <div class="continuar_btn_correct_tercero btn_next">Ver explicación</div>
         </div>
     </div>
     <div class="retroAlimentacionMalaContainerTercero">
         <div class="retroAlimentacionMala">
+            <i class="fas fa-times-circle"></i>
             <h2>Respuesta Incorrecta</h2>
             <div class="continuar_btn_bad_tercero btn_next">Ver explicación</div>
         </div>
@@ -88,7 +110,8 @@
 
     <div class="feed-final-normas">
         <div class="retroAlimentacionMala">
-            <h2>Muy bien has acabado tu segunda clase</h2>
+            <i class="fas fa-check-circle"></i>
+            <h2>¡Muy bien has acabado tu segunda clase!</h2>
         </div>
     </div>
 
