@@ -11,12 +11,11 @@
   <!-- <img src="/src/assets/banner.png" alt=""> -->
   <h3>{{clases.indexOf(clase)+1}} . {{clase.name}} 
 
-    <i *ngIf="clase.name==='Señalización y demarcación vial' && readySignals==true ||clase.name==='Autoridades y normas de trásito' && readyNormas ==true || clase.name==='El vehículo y la vía' &&  readyVehiculo ==true " class="fas fa-check-circle"></i> 
+    <i *ngIf="clase.name==='Señalización y demarcación vial' && readySignals==true ||clase.name==='Autoridades y normas de tránsito' && readyNormas ==true || clase.name==='El vehículo y la vía' &&  readyVehiculo ==true " class="fas fa-check-circle"></i> 
 
   </h3> 
   <p>Duración: {{clase.duracion}} minutos </p> 
   
-
 </div> 
 
 </div>
@@ -25,7 +24,7 @@
 
 </div> -->
 <app-clase-details *ngIf="claseSeleccionada && claseSeleccionada.name ==='El vehículo y la vía' " [clase]=claseSeleccionada ></app-clase-details>
-<app-normas-transito *ngIf="claseSeleccionada && claseSeleccionada.name ==='Autoridades y normas de trásito' " [clase]=claseSeleccionada ></app-normas-transito>
+<app-normas-transito *ngIf="claseSeleccionada && claseSeleccionada.name ==='Autoridades y normas de tránsito' " [clase]=claseSeleccionada ></app-normas-transito>
 <app-senalizacion-demarcacion *ngIf="claseSeleccionada && claseSeleccionada.name ==='Señalización y demarcación vial' " [clase]=claseSeleccionada></app-senalizacion-demarcacion>
 
 </div>
